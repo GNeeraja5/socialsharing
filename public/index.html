@@ -37,43 +37,30 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <script type="text/javascript">
-
-      // Initialize the Facebook JS SDK.
-        window.fbAsyncInit = function() {
-          FB.init({
-            appId            : '576088576204176',
-            autoLogAppEvents : true,
-            xfbml            : true,
-            version          : 'v3.1'
-          });
-      
-          // Put additional init code here
-        };
-      
-        // Load the Facebook JS SDK Asynchronously
-        (function(d, s, id){
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) {return;}
-          js = d.createElement(s); js.id = id;
-          js.src = "https://connect.facebook.net/en_US/sdk.js";
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-      
-          // Custom function to call when user initiates a share
-          function ogShare() {
-             FB.ui({
-               method: 'share_open_graph',
-               action_type: 'og.likes',
-               action_properties: JSON.stringify({
-                   object:'https://developers.facebook.com/docs/opengraph/getting-started',
-               })
-          }, function(response){
-               // Debug response (optional)
-               console.log(response);
-          });
-        }
-      
-      </script>
+    <script src='http://connect.facebook.net/en_US/all.js'></script>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId            : '576088576204176',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v3.2'
+        });
+      };
+    
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script>
+       FB.ui({
+      method: 'share',
+      href: 'https://developers.facebook.com/docs/'
+    }, function(response){});
+    </script>
   </body>
 </html>
