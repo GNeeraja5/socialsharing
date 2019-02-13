@@ -37,7 +37,7 @@ class App extends Component {
         </header>
         <FacebookShareButton url="http://www.facebook.com">facebook</FacebookShareButton>
         <LinkedinShareButton url="http://www.facebook.com">linked in</LinkedinShareButton>
-        <WhatsappShareButton url="http://www.facebook.com" title="zen3">whatsapp</WhatsappShareButton>
+        <WhatsappShareButton url="https://prerender-social.herokuapp.com/about" title="zen3">whatsapp</WhatsappShareButton>
         <FacebookProvider appId="576088576204176">
         <ShareButton href="http://www.facebook.com">
           Share
